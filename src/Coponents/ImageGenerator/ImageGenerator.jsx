@@ -17,7 +17,7 @@ const ImageGenerator=()=>{
         headers:{
             "Content-Type":"application/json",
             Authorization:
-            "Bearer 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",
+            "Bearer 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",
             "User-Agent":"Chrome"
         },
         body:JSON.stringify({
@@ -27,10 +27,12 @@ const ImageGenerator=()=>{
         })
     })
     let data =await response.json()
+    console.log(data);
     let data_array= data.data
-    setImageURLs(prevURLs => [...prevURLs, data_array[0].url]);
+    console.log(data_array)
+    setImageURLs((prevURLs) => [...prevURLs, data_array[0]?.url]);
     setLoading(false)
-    console.log(inputRef)
+    
     }
 
 
