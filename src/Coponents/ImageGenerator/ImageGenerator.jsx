@@ -17,7 +17,7 @@ const ImageGenerator=()=>{
         headers:{
             "Content-Type":"application/json",
             Authorization:
-            "Bearer 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",
+            `Bearer ${process.env.API_KEY}`,
             "User-Agent":"Chrome"
         },
         body:JSON.stringify({
@@ -31,6 +31,7 @@ const ImageGenerator=()=>{
     let data_array= data.data
     console.log(data_array)
     setImageURLs((prevURLs) => [...prevURLs, data_array[0]?.url]);
+
     setLoading(false)
     
     }
