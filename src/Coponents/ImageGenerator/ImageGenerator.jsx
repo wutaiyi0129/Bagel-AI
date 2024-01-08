@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react'
 import './ImageGenerator.css'
 import Image from '../Assets/Bagel.png'
+import 'dotenv/config'
 const ImageGenerator=()=>{
     const [imageURLs, setImageURLs] = useState([]);
     const [loading,setLoading]=useState(false)
@@ -17,7 +18,7 @@ const ImageGenerator=()=>{
         headers:{
             "Content-Type":"application/json",
             Authorization:
-            `Bearer ${process.env.API_KEY}`,
+            `Bearer ${process.env.OPENAI_API_KEY}`,
             "User-Agent":"Chrome"
         },
         body:JSON.stringify({
