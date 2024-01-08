@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react'
 import './ImageGenerator.css'
 import Image from '../Assets/Bagel.png'
-import 'dotenv/config'
 const ImageGenerator=()=>{
     const [imageURLs, setImageURLs] = useState([]);
     const [loading,setLoading]=useState(false)
